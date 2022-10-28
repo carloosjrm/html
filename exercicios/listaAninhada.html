@@ -1,0 +1,48 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <input type="button" onclick="mostraOcultar('backend')"/> Backend
+        <div id="backend">
+            <ul>
+                <li>
+                    <input type="button" onclick="mostraOcultar('app')"/> App
+                    <div id="app">
+                        <ul >
+                            <li>produto.js</li>
+                            <li>usuario.js</li>
+                            <li>venda.js</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="button" onclick="mostraOcultar('config')"/> Config
+                    <div id="config">
+                        <ul>
+                            <li>banco.js</li>
+                            <li>rotas.js</li>
+                            <li>servidor.js</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <input type="button" onclick="mostraOcultar('frontend')"/> Frotend
+        <div id="frontend">
+            <ul>
+                <li>
+                    <input type="button" onclick="mostraOcultar('public')"/> Public
+                    <div id="public">
+                        <ul>
+                            <li>app.css</li>
+                            <li>app.js</li>
+                            <li>index.html</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
