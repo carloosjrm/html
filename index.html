@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,23 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Exercicios de HTML</h1>
     </header>
     <nav>
         <a href wm-nav="exercicios/teste.html">00 - Teste</a> |
-        <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a>|
-        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a>|
-        <a href wm-nav="exercicios/listas.html">03 - Listas</a>|
-        <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a>|
+        <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a> |
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a> |
+        <a href wm-nav="exercicios/listas.html">03 - Listas</a> |
+        <a href wm-nav="exercicios/listaAninhada.html">04 - Lista Aninhada</a> |
+        <a href wm-nav="exercicios/links.html">05 - Links</a> |
+        <a href wm-nav="exercicios/tabela.html">06 - Tabela</a> |
+        <a href wm-nav="exercicios/form/form.html">07 - Formulário</a> |
+        <a href wm-nav="exercicios/imagens.html">08 - Imagens</a> |
+        <a href wm-nav="exercicios/video.html">09 - Video</a> |
+        <a href wm-nav="exercicios/tagsNaoVisuais.html">10 - Tags Não Visuais</a> |
     </nav>
     <section id="conteudo"></section>
     <footer>
@@ -33,7 +41,12 @@
                 e.preventDefault()
                 fetch(link.getAttribute('wm-nav'))
                     .then(resp => resp.text())
-                    .then(html => conteudo.innerHTML = html)
+                    .then(html => {
+                        conteudo.innerHTML = html
+                        if (link.getAttribute('wm-nav') == 'exercicios/imagens.html') {
+                            slider()
+                        }
+                    });
             }
         })
 
@@ -44,6 +57,20 @@
             else
                 document.getElementById(id).style.display = "none";
         }
+
+        function slider() {
+            let count = 1;
+            document.getElementById("radio1").checked = true;
+            setInterval(function () {
+                count++;
+                if (count > 4) {
+                    count = 1;
+                }
+                document.getElementById("radio" + count).checked = true;
+            }, 2000)
+        }
+
     </script>
 </body>
+
 </html>
