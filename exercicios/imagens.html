@@ -1,0 +1,145 @@
+<div wm-slider>
+    <div class="wm-slider">
+
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1"/>
+            <input type="radio" name="radio-btn" id="radio2"/>
+            <input type="radio" name="radio-btn" id="radio3"/>
+            <input type="radio" name="radio-btn" id="radio4"/>
+
+
+            <div class="slide first">
+                <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="imagem 1">
+            </div>
+            <div class="slide">
+                <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="imagem 2">
+            </div>
+            <div class="slide">
+                <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="imagem 3">
+            </div>
+            <div class="slide">
+                <img src="http://files.cod3r.com.br/curso-web/logo-larga.png" alt="imagem 4">
+            </div>
+
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+
+    </div>
+</div>
+<style>
+    .slider {
+        margin: 0 auto;
+        width: 800px;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .slides {
+        width: 400%;
+        height: 400px;
+        display: flex;
+    }
+
+    .slides input {
+        display: none;
+    }
+
+    .slide {
+        width: 25%;
+        position: relative;
+        transition: 2s;
+    }
+
+    .slide img {
+        width: 700px;
+    }
+
+    .manual-navigation {
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .manual-btn {
+        border: 2px solid #fff;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .manual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .manual-btn:hover {
+        background-color: #fff;
+    }
+
+    #radio1:checked~.first {
+        margin-left: 0;
+    }
+
+    #radio2:checked~.first {
+        margin-left: -25%;
+    }
+
+    #radio3:checked~.first {
+        margin-left: -50%;
+    }
+
+    #radio4:checked~.first {
+        margin-left: -75%;
+    }
+
+    .navigation-auto div {
+        border: 2px solid #20a6;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .navigation-auto {
+        position: absolute;
+        width: 800px;
+        margin-top: 360px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    #radio1:checked~.navigation-auto .auto-btn1 {
+        background-color: #fff;
+    }
+
+    #radio2:checked~.navigation-auto .auto-btn2 {
+        background-color: #fff;
+    }
+
+    #radio3:checked~.navigation-auto .auto-btn3 {
+        background-color: #fff;
+    }
+
+    #radio4:checked~.navigation-auto .auto-btn4 {
+        background-color: #fff;
+    }
+</style>
